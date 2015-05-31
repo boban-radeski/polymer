@@ -1,0 +1,110 @@
+<link rel="import" href="bower_components/polymer/polymer.html">
+
+<dom-module id="my-nav">
+    <style>
+        :host {
+            display: block;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+            :host[border="yes"] {
+                border: 1px solid grey;
+            }
+    </style>
+    <template>
+        <content></content>
+    </template>
+</dom-module>
+
+<dom-module id="my-menu">
+    <style>
+        ul {
+            display: inline-block;
+        }
+
+        :host[position="right"] {
+            float: right;
+            text-align: right;
+        }
+    </style>
+    <template>
+        <ul class="{{position}}">
+            <content></content>
+        </ul>
+    </template>
+</dom-module>
+
+
+
+<dom-module id="my-menu-item">
+    <style>
+        li {
+            display: inline-block;
+            margin-right: 15px;
+        }
+
+        a {
+            padding: 5px;
+            color: green;
+            text-decoration: none;
+        }
+
+            a:hover {
+                text-decoration: none;
+                color: red;
+            }
+    </style>
+    <template>
+        <li>
+            <a href="{{location}}"> <content></content> </a>
+        </li>
+    </template>
+</dom-module>
+
+<dom-module id="logo-wrapper">
+    <style>
+        :host {
+            display: inline-block;
+            vertical-align: middle;
+            padding-left: 10px;
+        }
+    </style>
+    <template>
+        <a href="{{logolocation}}">
+            <img src="{{image}}" alt="logo" />
+        </a>
+        <content></content>
+    </template>
+</dom-module>
+
+<script>
+    Polymer({ // navigataion
+        is: "my-nav"
+    });
+
+    Polymer({ // menu - ul
+        is: "my-menu",
+        properties: {
+            position: String
+        }
+    });
+
+    Polymer({ // menu item - li
+        is: "my-menu-item",
+        properties: {
+            location: String
+        }
+    });
+
+    Polymer({
+        is: "logo-wrapper",
+        properties: {
+            image: String,
+            logolocation: String
+        }
+    })
+
+</script>
