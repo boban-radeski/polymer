@@ -1,0 +1,17 @@
+{
+  "name": "polymer-navigation",
+  "version": "1.0.0",
+  "homepage": "https://github.com/boban-radeski/polymer",
+  "authors": [
+    "Boban"
+  ],
+  "description": "Custom menu navigation",
+  "main": "polymer/index.html",
+  "keywords": [
+    "menu",
+    "polymer",
+    "navigation",
+    "css"
+  ],
+  "license": "MIT"
+}
